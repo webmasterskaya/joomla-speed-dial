@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.8" client="site" method="upgrade">
+    <name>MOD_SPEEDDIAL</name>
+    <creationDate>19.06.2020</creationDate>
+    <author>Артём</author>
+    <authorEmail>your@email.com</authorEmail>
+    <authorUrl>http://your.url.com</authorUrl>
+    <copyright>A copyright</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <version>1.0</version>
+    <description>MOD_SPEEDDIAL_XML_DESCRIPTION</description>
+
+    <files>
+        <filename module="mod_speeddial">mod_speeddial.php</filename>
+        <folder>forms</folder>
+        <folder>tmpl</folder>
+        <folder>language</folder>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.mod_speeddial.ini</language>
+        <language tag="en-GB">en-GB/en-GB.mod_speeddial.sys.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.mod_speeddial.ini</language>
+        <language tag="ru-RU">ru-RU/ru-RU.mod_speeddial.sys.ini</language>
+    </languages>
+
+    <media destination="mod_speeddial" folder="media">
+        <folder>css</folder>
+    </media>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="joomla-speed-dial">
+            https://webmasterskaya.xyz/updates?element=joomla-speed-dial
+        </server>
+    </updateservers>
+
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                        name="items"
+                        label="Ссылки"
+                        type="subform"
+                        formsource="modules/mod_speeddial/forms/item.xml"
+                        multiple="true"
+                />
+            </fieldset>
+            <fieldset
+                    name="advanced">
+                <field
+                        name="moduleclass_sfx"
+                        type="text"
+                        label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                        description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"/>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

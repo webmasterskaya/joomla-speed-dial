@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset name="item" label="Ссылка">
+        <field name="item_icon" type="media" label="Иконка" />
+        <field name="item_title" type="text" label="Заголовок" />
+        <field name="item_subtitle" type="text" label="Подзаголовок" />
+        <field name="item_link" type="text" label="Ссылка" />
+    </fieldset>
+</form>

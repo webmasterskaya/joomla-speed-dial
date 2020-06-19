@@ -1,0 +1,112 @@
+.speed-dial {
+    width: 75px;
+    height: 75px;
+    background-color: #ed4e4e;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    box-shadow: 2px 1px 15px -5px #000;
+    cursor: pointer;
+    transition: box-shadow ease-in-out 350ms;
+    z-index: 1000;
+}
+
+.speed-dial:hover {
+    box-shadow: 2px 5px 25px -5px #000;
+}
+
+.speed-dial .content {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.speed-dial .speed-dial-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: all ease-in-out 200ms;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+    flex-direction: column;
+}
+
+.speed-dial:hover .speed-dial-items,
+.speed-dial .speed-dial-items:hover {
+    visibility: visible;
+    opacity: 1;
+}
+
+.speed-dial .speed-dial-items .speed-dial-item {
+    min-width: 50px;
+    width: max-content;
+    min-height: 50px;
+    border-radius: 500px;
+    background-color: #fff;
+    margin: 15px;
+    transform: scale(0);
+    transition-timing-function: ease-in-out;
+    transition-duration: 180ms;
+    transition-property: transform, visibility, opacity;
+    padding: 5px;
+}
+
+.speed-dial .speed-dial-items .speed-dial-item + .speed-dial-item{
+    margin-top: 0;
+}
+
+.speed-dial .speed-dial-items .speed-dial-item > *{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.speed-dial:hover .speed-dial-items .speed-dial-item,
+.speed-dial .speed-dial-items:hover .speed-dial-item {
+    transform: scale(1);
+}
+
+.speed-dial .speed-dial-items .speed-dial-item-image{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.speed-dial .speed-dial-items .speed-dial-item-image + .speed-dial-item-content{
+    margin-left: 5px;
+}
+
+.speed-dial .speed-dial-items .speed-dial-item-image > *{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: auto;
+}
+.speed-dial .speed-dial-items .speed-dial-item-content{
+    margin-right: 15px;
+    line-height: 1.1;
+}
+
+.speed-dial .speed-dial-items .speed-dial-item-title{
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.speed-dial .speed-dial-items .speed-dial-item:after{
+    content: "";
+    display: table;
+    clear: both;
+}
